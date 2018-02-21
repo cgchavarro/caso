@@ -31,7 +31,7 @@ public class Principal
 		 }
 		 lector.close();
 		
-		 System.exit(1);
+		 
 
 	}
 	
