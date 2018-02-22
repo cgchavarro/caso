@@ -14,7 +14,7 @@ public class Cliente extends Thread
 	//Mensaje del servicio
 	private Mensaje servicio;
 	//Identificador del cliente.
-	private int id;
+	private int identificador;
 
 	/**
 	 * Construye un cliente.
@@ -22,11 +22,11 @@ public class Cliente extends Thread
 	 * @param b el buffer al cual se asociarán las consultas.
 	 * @param i identificador del cliente.
 	 */
-	public Cliente(int pConsultas, Buffer b, int i)
+	public Cliente(int pConsultas, Buffer pBuffer, int id)
 	{
 		consultas = pConsultas;
-		buffer = b;
-		id = i;
+		buffer = pBuffer;
+		identificador = id;
 	}
 
 	/**
@@ -35,12 +35,13 @@ public class Cliente extends Thread
 	public void run()
 	{
 		servicio = new Mensaje(buffer);
-		for(int i = 0; i < consultas ; i++)
+		for(int i = 0; i < consultas-1 ; i++)
 		{
-			try {
+			try 
+			{
 				servicio.enviar(i);
 				int rta = servicio.darMensaje();
-				System.out.println("Mensaje: " + i + " Respuesta: " + rta + " - Cliente "+ id);
+				System.out.println("Mensaje: " + i + " Respuesta: " + rta + " - Cliente "+ identificador);
 			} 
 			catch (InterruptedException e) 
 			{

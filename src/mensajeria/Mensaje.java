@@ -16,9 +16,9 @@ public class Mensaje
 	 * @param b Es el buffer sobre el cual se cargará el mensaje
 	 * - b representa la cola en la que guardará el mensaje-
 	 */
-	public Mensaje(Buffer b)
+	public Mensaje(Buffer pBuffer)
 	{
-		buffer = b;
+		buffer = pBuffer;
 	}
 	
 	/**
@@ -26,9 +26,9 @@ public class Mensaje
 	 * @param msg mensaje a enviar, asigna el valor a la variable  mensaje.
 	 * @throws InterruptedException Si no logra almacenar el mensaje.
 	 */
-	public void enviar( int msg ) throws InterruptedException
+	public void enviar( int pMensaje ) throws InterruptedException
 	{
-		mensaje = msg;
+		mensaje =pMensaje;
 		buffer.almacenarMensaje(this);
 	}
 	
@@ -38,7 +38,7 @@ public class Mensaje
 	public void responder()
 	{
 		mensaje++;
-		
+	
 	}
 	
 	/**

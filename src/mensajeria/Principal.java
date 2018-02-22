@@ -18,12 +18,12 @@ public class Principal
 	public static void main(String[] args) throws IOException 
 	{
 		 File archivo = new File("./docs/datos.txt");
-		 BufferedReader lector = new BufferedReader(new FileReader(archivo));
-		 String linea = lector.readLine();
+		 BufferedReader br = new BufferedReader(new FileReader(archivo));
+		 String linea = br.readLine();
 		 int numClientes = Integer.parseInt(linea.split(":")[1]);
-		 linea = lector.readLine();
+		 linea = br.readLine();
 		 int numServers = Integer.parseInt(linea.split(":")[1]);
-		 linea = lector.readLine();
+		 linea = br.readLine();
 		 int tamBuffer = Integer.parseInt(linea.split(":")[1]);
 	
 		 
@@ -32,13 +32,13 @@ public class Principal
 		 { 
 			 new Servidor(buffer).start();
 		 }
-		 linea = lector.readLine();
+		 linea = br.readLine();
 		 for(int i = 0; i < numClientes; i++)
 		 {
 			 int cons = Integer.parseInt(linea.split(":")[i]);
-			 new Cliente(cons,buffer,i).start();
+			 new Cliente(cons+1,buffer,i+1).start();
 		 }
-		 lector.close();
+		 br.close();
 	
 		 //TODO Comparar con el enunciado y ver qué detalles faltan o sobran
 		 

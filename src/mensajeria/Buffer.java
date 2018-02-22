@@ -20,9 +20,9 @@ public class Buffer
 	 * @param n capacidad del buffer
 	 * @param clientes numero de clientes que trabajarán sobre el buffer.
 	 */
-	public Buffer ( int n , int clientes) 
+	public Buffer ( int pCapacidad , int clientes) 
 	{
-		capacidad = n;
+		capacidad =  pCapacidad;
 		mensajes = new ArrayList<Mensaje>( );
 		numClientes=clientes;
 	}
@@ -40,7 +40,7 @@ public class Buffer
 		synchronized (this) 
 		{
 			wait();
-			}
+		}
 
 	}
 

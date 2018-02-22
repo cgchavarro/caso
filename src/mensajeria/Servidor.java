@@ -23,12 +23,14 @@ public class Servidor extends Thread
 	 */
 	public void run()
 	{
-		try {
+		try 
+		{
 			while(!buffer.hayClientes())
 			{
 				buffer.retirarMensaje();
 			}
-		} catch (InterruptedException e)
+		} 
+		catch (InterruptedException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
