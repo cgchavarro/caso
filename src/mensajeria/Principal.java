@@ -40,6 +40,18 @@ public class Principal
 		 }
 		 lector.close();
 	
+		 //TODO Comparar con el enunciado y ver qué detalles faltan o sobran
+		 
+		 //TODO se puede modelar una especie de ordenamiento que diga lo que debía hacer cada cliente 
+		 //Después, mostrar el resultado de cada cliente  -Con la respuesta a sus mensajes-
+		 
+		 //TODO Otra opción, es modelar  de mejor manera los mensajes en la consola.
+		 //Hacer más chevere eso
+		 
+		 //TODO Mirar cómo hacer que la aplicación termine cuando todo acabe de procesarse.
+		 
+		 
+		
 	}
 	
 }

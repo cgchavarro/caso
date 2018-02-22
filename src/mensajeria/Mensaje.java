@@ -38,6 +38,7 @@ public class Mensaje
 	public void responder()
 	{
 		mensaje++;
+		
 	}
 	
 	/**
